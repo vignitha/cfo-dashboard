@@ -1,0 +1,9 @@
+package com.citizens.cfo_dashboard.model;
+
+public class APInvoice {
+	
+	private String invoiceId;
+	private int ipId;
+	private int totalAmount;
+
+}

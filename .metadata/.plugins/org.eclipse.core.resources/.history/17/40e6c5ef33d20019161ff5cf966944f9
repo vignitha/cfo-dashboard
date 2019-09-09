@@ -1,0 +1,46 @@
+package com.citizens.cfo_dashboard.service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.citizens.cfo_dashboard.repo.APInvoiceRepo;
+import com.citizens.cfo_dashboard.repo.ARInvoiceRepo;
+
+@Service
+public class DashboardService {
+
+	@Autowired
+	private APInvoiceRepo apInvoiceRepo;
+
+	@Autowired
+	private ARInvoiceRepo arInvoiceRepo;
+
+	public List<Map<String, Object>> getReport(Integer ipid) {
+		List<Map<String, Object>> response = new ArrayList<>();
+		int arValue = arInvoiceRepo.findByIpId(ipid);
+		Map<String,Object> arMap = getArMap(arValue);
+		int apValue = apInvoiceRepo.findByIpId(ipid);
+		Map<String,Object> apMap = getApMap(apValue);
+		
+		return response;
+	}
+
+	private Map<String, Object> getApMap(int apValue) {
+		Map<String, Object> apMap = new HashMap<String, Object>();
+		apMap.put("name", "Accounts Payables");
+		apMap.put("value", apValue);
+		apMap.put("alerts", "This is the primary content of the panel.");
+		
+		return null;
+	}
+
+	private Map<String, Object> getArMap(int arValue) {
+		
+		return null;
+	}
+}

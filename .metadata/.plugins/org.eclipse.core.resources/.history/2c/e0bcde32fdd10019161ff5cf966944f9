@@ -1,0 +1,9 @@
+package com.citizens.cfo_dashboard.controller;
+
+public class DashboardController {
+  
+	
+	public String test() {
+		return "Hello";
+	}
+}

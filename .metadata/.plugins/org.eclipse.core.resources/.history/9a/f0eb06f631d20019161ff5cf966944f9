@@ -1,0 +1,12 @@
+package com.citizens.cfo_dashboard.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.citizens.cfo_dashboard.model.ARInvoice;
+
+public interface ARInvoiceRepo extends JpaRepository<ARInvoice, String> {
+
+	@Query("select u from User u")
+	public ARInvoice findByIpId();
+}

@@ -1,0 +1,5 @@
+package com.citizens.cfo_dashboard.service;
+
+public class DashboardService {
+
+}

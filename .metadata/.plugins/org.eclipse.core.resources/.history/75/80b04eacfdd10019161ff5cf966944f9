@@ -1,0 +1,11 @@
+package com.citizens.cfo_dashboard.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+public class DashboardController {
+  
+	@GetMapping("/hello")
+	public String test() {
+		return "Hello";
+	}
+}

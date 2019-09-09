@@ -1,0 +1,46 @@
+package com.citizens.cfo_dashboard.controller;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class DashboardController {
+
+	@GetMapping("/healthcheck")
+	public String test() {
+		return "Everything is Fine";
+	}
+
+	@GetMapping("/getreport")
+	public List<Map<String, Object>> getReport() {
+		List<Map<String, Object>> response = new ArrayList<>();
+		response = getNewReport();
+		return response;
+
+	}
+
+	public List<Map<String, Object>> getNewReport() {
+		List<Map<String, Object>> response = new ArrayList<>();
+
+		Map<String, Object> m1 = new HashMap<>();
+		m1.put("name", "AccountsReceivables");
+		m1.put("value", 8089721);
+		m1.put("alerts", "This is the primary content of the panel.");
+		
+		
+		Map<String, Object> m2 = new HashMap<>();
+		m2.put("name", "Accountspayables");
+		m2.put("value", 8089721);
+		m2.put("alerts", "This is the primary content of the panel.");
+		response.add(m1);
+
+		return response;
+
+	}
+
+}

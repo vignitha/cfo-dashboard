@@ -1,0 +1,10 @@
+package com.citizens.cfo_dashboard.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.citizens.cfo_dashboard.model.APInvoice;
+import com.citizens.cfo_dashboard.model.ARInvoice;
+
+public interface APInvoiceRepo extends JpaRepository<APInvoice, String> {
+
+}
